@@ -1,0 +1,39 @@
+{
+  "name": "companyhero-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "build": "tsc && tsc-alias && cp .env dist",
+    "start:prod": "npm run build && node dist/src/server.js",
+    "docker":"docker-compose up -d",
+    "docker:down":"docker-compose down"
+
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^20.14.10",
+    "@types/supertest": "^6.0.2",
+    "@vitest/ui": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "reflect-metadata": "^0.2.2",
+    "supertest": "^7.0.0",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
