@@ -9,6 +9,7 @@
     "test:ui": "vitest --ui",
     "build": "tsc && tsc-alias && cp .env dist",
     "start:prod": "npm run build && node dist/src/server.js",
+    "start:render": "tsc && tsc-alias && node dist/src/server.js",
     "docker":"docker-compose up -d",
     "docker:down":"docker-compose down"
 
