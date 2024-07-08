@@ -11,6 +11,13 @@ A playlist utilizei a API do Spotify para retornar as músicas com base na categ
 Para os testes unitários utilizei o Vitest. 
 Abaixo tem as instruções de execução dos testes.
 
+# Acesso
+Link de acesso da API `https://companyhero-api.onrender.com/`.
+Realizando um GET no endpoint `api/v1/recommendation/?city=Taubate` passando o parametro da cidade, retorna um objeto com city, state, country, temp_c e um objeto com o array da playlist, contendo title, artist, url, duração e o album.
+
+Para as requisições é necessário a utilização de um Authorization.
+Estarei compartilhando o curl com a Olivia.
+
 # Infraestrutura
 Utilizei a ferramenta Render `https://render.com/` para a API e para o Redis.
 O Render foi escolhido pela praticidade em poder disponibilizar o link para vocês.
@@ -88,6 +95,11 @@ Por exemplo se existe uma falha em uma determinada API no qual ela é o core do 
 Processo de cache com o serviço executando no Render em Oregon. 
 Houve uma média de 196ms de tempo de resposta com o cache e 333ms sem o cache.
 A latência demostrou relevante quando se trata dentro da mesma região, mas quando a região é diferente, fica uma valor considerável. Mas que ainda assim é bem baixo.
+
+- Segurança
+Nesse ponto sou fã de trabalhar com a Cloudflare, utilização de VPN para toda a infraestrutura e redes privadas. 
+Com isso o ambiente não fica exposto e conseguimos limitar os acessos ao produto.
+Para a aplicação utilizei apenas o Authorization, já que não envolve Login / acesso em si para identificação de um usuário.
 
 - Organização das pastas
 Inclusão da pasta gateway para serviços externos, foi uma forma de abstrair a chamada externa, mas deixando uma simples leitura com o caso de uso.
